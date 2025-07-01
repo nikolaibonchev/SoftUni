@@ -1,5 +1,4 @@
 import page from "//unpkg.com/page/page.mjs";
-import {html, render} from 'https://unpkg.com/lit-html?module';
 import { createFunitureView } from "./views/createFurniture.js";
 import { dashboardView } from "./views/dashboard.js";
 import { loginView } from "./views/login.js";

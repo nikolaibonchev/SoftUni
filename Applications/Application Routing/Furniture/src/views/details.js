@@ -69,7 +69,7 @@ const editFurnitureTemplate = (item, onSubmit, errors = {}) => html`
                     <input class="form-control ${errors.price === undefined ? '' : (errors.price ? 'is-invalid' : 'is-valid')}" id="new-price" type="number" name="price" value=${item.price}>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="new-image">Image</label>
+                    <label class="form-control-label" for="new-image">Image (from ./image/...)</label>
                     <input class="form-control ${errors.img === undefined ? '' : (errors.img ? 'is-invalid' : 'is-valid')}" id="new-image" type="text" name="img" value=${item.img}>
                 </div>
                 <div class="form-group">

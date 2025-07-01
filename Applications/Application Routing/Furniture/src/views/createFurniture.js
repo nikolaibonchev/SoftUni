@@ -37,7 +37,7 @@ const createFurnitureTemplate = (onSubmit, errors = {}, values = {}) => html`
                     <input class="form-control ${errors.price === undefined ? '' : (errors.price ? 'is-invalid' : 'is-valid')}" id="new-price" type="number" name="price" value=${values.price || ''}>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="new-image">Image (form ./image/...)</label>
+                    <label class="form-control-label" for="new-image">Image (from ./image/...)</label>
                     <input class="form-control ${errors.img === undefined ? '' : (errors.img ? 'is-invalid' : 'is-valid')}" id="new-image" type="text" name="img" value=${values.img || ''}>
                 </div>
                 <div class="form-group">

@@ -1,3 +1,5 @@
+import { v4 as uuid } from 'uuid'
+
 const movies = [
   {
     id: "tt1630029",
@@ -37,6 +39,7 @@ const movies = [
 export default {
     getAll() {return movies},
     create(movieData) {
+      movieData.id = uuid()
       movies.push(movieData)
       return movieData;
     },

@@ -35,5 +35,9 @@ const movies = [
 ];
 
 export default {
-    getAll() {return movies}
+    getAll() {return movies},
+    create(movieData) {
+      movies.push(movieData)
+      return movieData;
+    }
 }

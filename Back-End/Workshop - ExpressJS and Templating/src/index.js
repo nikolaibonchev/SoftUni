@@ -16,7 +16,7 @@ app.engine('hbs', handlebars.engine({
         showRating(rating){
             return '★'.repeat(Math.floor(rating))
         }
-    }
+    },
 }))
 
 try {

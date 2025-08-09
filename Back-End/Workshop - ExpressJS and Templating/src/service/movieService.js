@@ -22,8 +22,8 @@ export default {
       const movie = new Movie(movieData)
       return movie.save();
     },
-    getOne(movieId){
-      const movie = movies.find(movie => movie.id === movieId);
+    async getOne(movieId){
+      const movie = await Movie.findById(movieId).lean();
       return movie;
     }
 }

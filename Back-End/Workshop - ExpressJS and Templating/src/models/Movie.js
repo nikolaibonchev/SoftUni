@@ -39,7 +39,7 @@ const movieSchema = new Schema({
     },
     casts: [{
         type: Types.ObjectId,
-        ref: 'Casts'
+        ref: 'Cast'
     }]
 })
 

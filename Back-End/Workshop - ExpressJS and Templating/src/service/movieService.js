@@ -1,3 +1,4 @@
+import Cast from "../models/Cast.js";
 import Movie from "../models/Movie.js";
 
 export default {
@@ -23,12 +24,12 @@ export default {
       return movie.save();
     },
     async getOne(movieId){
-      const movie = await Movie.findById(movieId);
+      const movie = await Movie.findById(movieId).populate('casts');
       return movie;
     },
     async attach(movieId, castId){
       const movie = await this.getOne(movieId)
       movie.casts.push(castId);
       return movie.save();
-    }
+    },
 }

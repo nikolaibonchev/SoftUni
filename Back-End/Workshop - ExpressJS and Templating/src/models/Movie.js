@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Types } from "mongoose";
 
 const movieSchema = new Schema({
     title: {
@@ -37,6 +37,10 @@ const movieSchema = new Schema({
         type: String,
         required: [true, 'Category is required'],
     },
+    casts: [{
+        type: Types.ObjectId,
+        ref: 'Casts'
+    }]
 })
 
 const Movie = model('Movie', movieSchema);

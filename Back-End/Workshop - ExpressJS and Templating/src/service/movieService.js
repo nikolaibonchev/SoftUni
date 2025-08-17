@@ -2,7 +2,7 @@ import Movie from "../models/Movie.js";
 
 export default {
     async getAll(filter = {}) {
-      let result = await Movie.find().lean();
+      let result = await Movie.find();
       
       if (filter.search){
         result = result.filter(movie => movie.title.toLowerCase().includes(filter.search.toLowerCase()));
@@ -23,7 +23,12 @@ export default {
       return movie.save();
     },
     async getOne(movieId){
-      const movie = await Movie.findById(movieId).lean();
+      const movie = await Movie.findById(movieId);
       return movie;
+    },
+    async attach(movieId, castId){
+      const movie = await this.getOne(movieId)
+      movie.casts.push(castId);
+      return movie.save();
     }
 }

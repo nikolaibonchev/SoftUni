@@ -6,7 +6,7 @@ const castSchema = new Schema({
         required: [true, 'Actor\'s name is required'],
     },
     age: {
-        type: String,
+        type: Number,
         required: [true, 'Actor\'s age is required'],
         min: 1,
         max: 120,

@@ -4,7 +4,7 @@ import movieService from '../service/movieService.js';
 const movieController = express.Router();
 
 movieController.get('/create', (req, res) =>{
-    res.render('create');
+    res.render('movie/create');
 })
 
 movieController.post('/create', async (req, res) =>{

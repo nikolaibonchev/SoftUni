@@ -12,10 +12,12 @@ const movieSchema = new Schema({
     description: {
         type: String,
         required: false,
+        max: [1000, "Description should not have more than 1000 characters"],
     },
     imageUrl: {
         type: String,
         required: [true, 'Image is required'],
+        validate: /^https?:\/\//,
     },
     director: {
         type: String,
@@ -28,6 +30,8 @@ const movieSchema = new Schema({
     rating: {
         type: Number,
         required: [true, 'Rating is required'],
+        min: 0,
+        max: 10
     },
     category: {
         type: String,

@@ -18,7 +18,7 @@ const castSchema = new Schema({
     castImg: {
         type: String,
         required: [true, 'Actor\'s picture is required'],
-        validate: /^https?:\/\//,
+        validate: [/^https?:\/\//, 'Invalid img url'],
     }
 });
 

@@ -35,7 +35,7 @@ app.set('views', './src/views');
 
 app.use(homeController);
 app.use('/movies', movieController);
-app.use('/cast', castController);
+app.use('/casts', castController);
 app.all('*url', (req, res) =>{
     res.render('404');
 })

@@ -7,6 +7,14 @@ userController.get('/login',(req,res) => {
     res.render('user/login');
 });
 
+userController.post('/login', async(req,res) => {
+    const { email, password } = req.body;
+
+    const token = await userService.login(email, password);
+
+    res.redirect('/');
+});
+
 userController.get('/register',(req,res) => {
     res.render('user/register');
 });

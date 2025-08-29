@@ -9,7 +9,7 @@ export default {
         return User.create(userData);
     },
     async login(email, password){
-        const user = await User.findOne({email});
+        const user = await User.findOne({ email });
 
         if(!user){
             return new Error('No such user!');
@@ -26,7 +26,7 @@ export default {
             email: user.email,
         };
 
-        const token = jsonwebtoken.sign(payload, jwtSecret, {expiresIn: '2h'});
+        const token = jsonwebtoken.sign(payload, jwtSecret, { expiresIn: '2h' });
 
         return token;
     },

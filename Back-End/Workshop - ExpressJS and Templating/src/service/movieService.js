@@ -19,8 +19,9 @@ export default {
 
       return query;
     },
-    create(movieData) {
+    create(movieData, userId) {
       const movie = new Movie(movieData)
+      movie.owner = userId;
       return movie.save();
     },
     async getOne(movieId){

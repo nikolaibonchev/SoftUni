@@ -28,4 +28,9 @@ userController.post('/register', async(req,res) => {
     res.redirect('/users/login');
 });
 
+userController.get('/logout',(req,res) => {
+    res.clearCookie('auth');
+    res.redirect('/');
+});
+
 export default userController;

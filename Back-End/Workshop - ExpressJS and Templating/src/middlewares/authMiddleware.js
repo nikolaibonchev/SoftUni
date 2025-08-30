@@ -11,6 +11,7 @@ export const auth = (req, res, next) => {
     try {
         const { id, email } = jsonwebtoken.verify(token, jwtSecret);
         req.user = { id, email};
+        res.locals.user = { id, email}
         next();
     } catch (err){
         res.clearCookie('auth');

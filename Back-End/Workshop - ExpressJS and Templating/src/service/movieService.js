@@ -33,4 +33,7 @@ export default {
       movie.casts.push(castId);
       return movie.save();
     },
+    async delete(movieId){
+      return Movie.findByIdAndDelete(movieId);
+    }
 }

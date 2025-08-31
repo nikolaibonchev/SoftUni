@@ -1,4 +1,4 @@
-import jsonwebtoken from 'jsonwebtoken'
+import jsonwebtoken from 'jsonwebtoken';
 import { jwtSecret } from '../config/general.js';
 
 export const auth = (req, res, next) => {
@@ -6,7 +6,7 @@ export const auth = (req, res, next) => {
     
     if(!token){
         return next();
-    }
+    };
 
     try {
         const { id, email } = jsonwebtoken.verify(token, jwtSecret);
@@ -16,5 +16,13 @@ export const auth = (req, res, next) => {
     } catch (err){
         res.clearCookie('auth');
         res.redirect('/users/login');
-    }
+    };
+}
+
+export const isAuth = (req, res, next) => {
+    if(!req.user){
+        return res.redirect('/users/login');
+    };
+
+    next();
 }

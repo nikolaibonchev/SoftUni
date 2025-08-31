@@ -5,7 +5,7 @@
         them all and in the darkness bind them."</h2>
     </div>
 
-    <form action="#" method="" class="editForm">
+    <form method="POST" class="editForm">
       <h2>Edit Post</h2>
       <ul class="noBullet">
         <li>
@@ -22,11 +22,9 @@
           <label for="category">Category:</label>
           <select id="category" class="inputFields" name="category">
             <option value="">Select Category</option>
-            <option value="tv-show">TV Show</option>
-            <option value="animation">Animation</option>
-            <option value="movie" selected>Movie</option>
-            <option value="documentary">Documentary</option>
-            <option value="short-film">Short Film</option>
+            {{#each categoryOptions}}
+            <option value="{{value}}" {{selected}}>{{title}}</option>
+            {{/each}}
           </select>
         </li>
         <li>
@@ -75,8 +73,8 @@
             type="text"
             class="inputFields"
             id="rating"
-            name="raing"
-            value="{{movie.raing}}"
+            name="rating"
+            value="{{movie.rating}}"
           />
         </li>
         <li>
